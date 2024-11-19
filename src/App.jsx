@@ -1,7 +1,5 @@
 import React from 'react';
 import Sidebar from './compnent/Sidebar';
-import './index.css';
-
 import Footer from './compnent/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './compnent/pages/HomePage';
@@ -13,25 +11,24 @@ import About from './compnent/About';
 const App = () => {
   return (
     <BrowserRouter>
-      <div>
-        <Sidebar></Sidebar>
-     <About/>
-      <div className='grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16'>
+      {/* Persistent Sidebar */}
+      <Sidebar />
+      <About/>
+
+      {/* Main Content Area */}
+      <div className="pt-16">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
-<div/>
-  <Footer />
       </div>
+
+      {/* Persistent Footer */}
+      <Footer />
     </BrowserRouter>
   );
 };
-     
-    
 
-
-      
-
+export default App;
