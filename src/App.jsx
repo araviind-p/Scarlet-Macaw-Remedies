@@ -1,87 +1,37 @@
 import React from 'react';
 import Sidebar from './compnent/Sidebar';
 import './index.css';
-import Card from './compnent/Card';
+
 import Footer from './compnent/Footer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './compnent/pages/HomePage';
+import AboutPage from './compnent/pages/AboutPage';
+import ServicesPage from './compnent/pages/ServicesPage';
+import ContactPage from './compnent/pages/ContactPage';
 import About from './compnent/About';
 
 const App = () => {
   return (
-    <div>
-      <Sidebar></Sidebar>
-      <About/>
+    <BrowserRouter>
+      <div>
+        <Sidebar></Sidebar>
+     <About/>
       <div className='grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16'>
-
-        <Card
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IG5G4T7uNoezBW4L91PgCcrwvPIsytyCew&s"
-          title="Card Title"
-          description="This is a brief description of the card content. It provides a summary or context."
-          buttonText="Learn More"
-        />
-        <Card
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IG5G4T7uNoezBW4L91PgCcrwvPIsytyCew&s"
-          title="Card Title"
-          description="This is a brief description of the card content. It provides a summary or context."
-          buttonText="Learn More"
-        />
-        <Card
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IG5G4T7uNoezBW4L91PgCcrwvPIsytyCew&s"
-          title="Card Title"
-          description="This is a brief description of the card content. It provides a summary or context."
-          buttonText="Learn More"
-        />
-        <Card
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IG5G4T7uNoezBW4L91PgCcrwvPIsytyCew&s"
-          title="Card Title"
-          description="This is a brief description of the card content. It provides a summary or context."
-          buttonText="Learn More"
-        />
-        <Card
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IG5G4T7uNoezBW4L91PgCcrwvPIsytyCew&s"
-          title="Card Title"
-          description="This is a brief description of the card content. It provides a summary or context."
-          buttonText="Learn More"
-        />
-        <Card
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IG5G4T7uNoezBW4L91PgCcrwvPIsytyCew&s"
-          title="Card Title"
-          description="This is a brief description of the card content. It provides a summary or context."
-          buttonText="Learn More"
-        />
-        <Card
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IG5G4T7uNoezBW4L91PgCcrwvPIsytyCew&s"
-          title="Card Title"
-          description="This is a brief description of the card content. It provides a summary or context."
-          buttonText="Learn More"
-        />
-        <Card
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IG5G4T7uNoezBW4L91PgCcrwvPIsytyCew&s"
-          title="Card Title"
-          description="This is a brief description of the card content. It provides a summary or context."
-          buttonText="Learn More"
-        />
-        <Card
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IG5G4T7uNoezBW4L91PgCcrwvPIsytyCew&s"
-          title="Card Title"
-          description="This is a brief description of the card content. It provides a summary or context."
-          buttonText="Learn More"
-        />
-        <Card
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IG5G4T7uNoezBW4L91PgCcrwvPIsytyCew&s"
-          title="Card Title"
-          description="This is a brief description of the card content. It provides a summary or context."
-          buttonText="Learn More"
-        />
-        <Card
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IG5G4T7uNoezBW4L91PgCcrwvPIsytyCew&s"
-          title="Card Title"
-          description="This is a brief description of the card content. It provides a summary or context."
-          buttonText="Learn More"
-        />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+<div/>
+  <Footer />
       </div>
-      <Footer />
-    </div>
+    </BrowserRouter>
   );
 };
+     
+    
 
-export default App;
+
+      
+
