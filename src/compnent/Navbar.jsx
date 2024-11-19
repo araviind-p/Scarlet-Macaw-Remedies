@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Logo from "../../public/logo.jpg"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to={'/'}>
             <div className="flex items-center">
-              <span className="text-2xl font-bold">MyLogo</span>
+              <span className="text-2xl font-bold"> <img src={Logo} alt="Logo" className="h-10 w-10 rounded-full" /></span>
             </div>
           </Link>
 
