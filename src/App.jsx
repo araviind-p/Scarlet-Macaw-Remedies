@@ -11,8 +11,8 @@ const App = () => {
   return (
     <BrowserRouter>
       {/* Persistent Sidebar */}
-      <Sidebar />
-      <About/>
+      <Navbar />
+      {/* <HomePage/> */}
 
       {/* Main Content Area */}
       <div className="pt-16">
