@@ -6,14 +6,12 @@ import HomePage from './compnent/pages/HomePage';
 import AboutPage from './compnent/pages/AboutPage';
 import ServicesPage from './compnent/pages/ServicesPage';
 import ContactPage from './compnent/pages/ContactPage';
-import About from './compnent/About';
 
 const App = () => {
   return (
     <BrowserRouter>
       {/* Persistent Sidebar */}
       <Sidebar />
-      <About/>
 
       {/* Main Content Area */}
       <div className="pt-16">
