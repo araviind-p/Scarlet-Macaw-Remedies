@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.webp';
 
 const Footer = () => {
@@ -96,18 +97,33 @@ const Footer = () => {
               Quick links
             </h6>
             <p className="mb-4 flex justify-center">
-              <a className="text-neutral-600 dark:text-neutral-200">Home</a>
+              <Link to={'/'} className="text-neutral-600 dark:text-neutral-200">
+                Home
+              </Link>
             </p>
             <p className="mb-4 flex justify-center">
-              <a className="text-neutral-600 dark:text-neutral-200">Products</a>
+              <Link
+                to={'/about'}
+                className="text-neutral-600 dark:text-neutral-200"
+              >
+                About
+              </Link>
             </p>
             <p className="mb-4 flex justify-center">
-              <a className="text-neutral-600 dark:text-neutral-200">About us</a>
+              <Link
+                to={'/services'}
+                className="text-neutral-600 dark:text-neutral-200"
+              >
+                Services
+              </Link>
             </p>
             <p className="flex justify-center">
-              <a className="text-neutral-600 dark:text-neutral-200">
+              <Link
+                to={'/contact'}
+                className="text-neutral-600 dark:text-neutral-200"
+              >
                 Contact us
-              </a>
+              </Link>
             </p>
           </div>
           {/* <!-- Useful links section --> */}
@@ -140,7 +156,7 @@ const Footer = () => {
                 <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                 <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
               </svg>
-              sreejithpappi@gmail.com
+              scarletmacawremedies@gmail.com
             </p>
           </div>
           {/* <!-- Contact section --> */}
