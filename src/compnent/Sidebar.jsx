@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#1b5121] text-white shadow-md">
+    <nav className="bg-[#1b3d4e] text-white shadow-md z-10 fixed w-full opacity-95">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -67,32 +67,32 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden overflow-hidden"
           >
-            <div className="space-y-2 px-4 pb-4">
+            <div className="px-4 pb-4 flex justify-evenly items-center">
               <a
                 href="#"
                 onClick={toggleMenu}
-                className="block text-white hover:bg-[#77bfca] p-2 rounded"
+                className="block text-white hover:bg-[#296582] p-2 rounded"
               >
                 Home
               </a>
               <a
                 href="#"
                 onClick={toggleMenu}
-                className="block text-white hover:bg-[#77bfca] p-2 rounded"
+                className="block text-white hover:bg-[#296582] p-2 rounded"
               >
                 About
               </a>
               <a
                 href="#"
                 onClick={toggleMenu}
-                className="block text-white hover:bg-[#77bfca] p-2 rounded"
+                className="block text-white hover:bg-[#296582] p-2 rounded"
               >
                 Services
               </a>
               <a
                 href="#"
                 onClick={toggleMenu}
-                className="block text-white hover:bg-[#77bfca] p-2 rounded"
+                className="block text-white hover:bg-[#296582] p-2 rounded"
               >
                 Contact
               </a>
