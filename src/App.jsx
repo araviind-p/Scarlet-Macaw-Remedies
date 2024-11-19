@@ -3,12 +3,13 @@ import Sidebar from './compnent/Sidebar';
 import './index.css';
 import Card from './compnent/Card';
 import Footer from './compnent/Footer';
+import About from './compnent/About';
 
 const App = () => {
   return (
     <div>
       <Sidebar></Sidebar>
-
+      <About/>
       <div className='grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16'>
 
         <Card
