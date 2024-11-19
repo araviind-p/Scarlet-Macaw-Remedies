@@ -10,8 +10,9 @@ import ContactPage from './compnent/pages/ContactPage';
 const App = () => {
   return (
     <BrowserRouter>
-      {/* Persistent Navbar */}
-      <Navbar />
+      {/* Persistent Sidebar */}
+      <Sidebar />
+      <About/>
 
       {/* Main Content Area */}
       <div className="pt-16">

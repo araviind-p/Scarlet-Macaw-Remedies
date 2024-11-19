@@ -82,7 +82,7 @@ const Footer = () => {
         <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* <!-- TW Elements section --> */}
           <div className="">
-            <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
+            <h6 className="mb-4 flex items-center justify-center font-bold uppercase md:justify-start">
               <img src={Logo} alt="Logo" className="h-24 w-24 mr-3" />
               Scarlet macaw
             </h6>
@@ -93,7 +93,7 @@ const Footer = () => {
           </div>
           {/* <!-- Products section --> */}
           <div className="">
-            <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-center">
+            <h6 className="mb-4 flex justify-center font-bold uppercase md:justify-center">
               Quick links
             </h6>
             <p className="mb-4 flex justify-center">
@@ -128,7 +128,7 @@ const Footer = () => {
           </div>
           {/* <!-- Useful links section --> */}
           <div className="">
-            <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-center">
+            <h6 className="mb-4 flex justify-center font-bold uppercase md:justify-center">
               Inquiries
             </h6>
             <p className="mb-4 flex items-center justify-center md:justify-center">
@@ -161,7 +161,7 @@ const Footer = () => {
           </div>
           {/* <!-- Contact section --> */}
           <div className="">
-            <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-center">
+            <h6 className="mb-4 flex justify-center font-bold uppercase md:justify-center">
               Visit us
             </h6>
             <p className="mb-4 flex items-center justify-center md:justify-center">
