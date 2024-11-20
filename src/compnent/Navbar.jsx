@@ -1,40 +1,99 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import Logo from "../../public/logo.jpg"
+import { scroller } from 'react-scroll';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import Logo from '../../public/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0); // Store last scroll position
+  const [isVisible, setIsVisible] = useState(true); // Track if navbar is visible
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleNavigateAndScroll = (sectionId) => {
+    if (window.location.pathname !== '/') {
+      navigate('/');
+    }
+
+    setTimeout(() => {
+      scroller.scrollTo(sectionId, {
+        smooth: true,
+        duration: 500,
+      });
+    }, 100);
+  };
+
+  const handlePageNavigation = (route) => {
+    navigate(route);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Hide navbar on scroll down, show on scroll up
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      // If scrolling down, hide navbar
+      setIsVisible(false);
+    } else {
+      // If scrolling up, show navbar
+      setIsVisible(true);
+    }
+    setLastScrollY(window.scrollY); // Update last scroll position
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll); // Listen for scroll events
+
+    // Clean up the scroll event listener when component unmounts
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <nav className="bg-[#1b3d4e] text-white shadow-md z-10 fixed w-full opacity-95">
+    <motion.nav
+      className={`bg-[#e9f9f9] text-black shadow-md z-10 fixed w-full bg-opacity-95 transition-transform ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to={'/'}>
-            <div className="flex items-center">
-              <span className="text-2xl font-bold"> <img src={Logo} alt="Logo" className="h-10 w-10 rounded-full" /></span>
+          <RouterLink to={'/'}>
+            <div className="flex items-center justify-center">
+              <span className="text-2xl font-bold">
+                <img src={Logo} alt="Logo" className="h-12" />
+              </span>
             </div>
-          </Link>
+          </RouterLink>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
-            <Link to={'/'} className="hover:text-gray-200">
+            <button
+              onClick={() => handleNavigateAndScroll('home')}
+              className="hover:text-[#1b4e8c] font-semibold cursor-pointer"
+            >
               Home
-            </Link>
-            <Link to={'/about'} className="hover:text-gray-200">
+            </button>
+            <button
+              onClick={() => handleNavigateAndScroll('about')}
+              className="hover:text-[#1b4e8c] font-semibold cursor-pointer"
+            >
               About
-            </Link>
-            <Link to={'/services'} className="hover:text-gray-200">
-              Services
-            </Link>
-            <Link to={'/contact'} className="hover:text-gray-200">
+            </button>
+            <button
+              onClick={() => handleNavigateAndScroll('products')}
+              className="hover:text-[#1b4e8c] font-semibold cursor-pointer"
+            >
+              Products
+            </button>
+            <button
+              onClick={() => handlePageNavigation('/contact')}
+              className="hover:text-[#1b4e8c] font-semibold cursor-pointer"
+            >
               Contact
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,39 +130,47 @@ const Navbar = () => {
             className="md:hidden overflow-hidden"
           >
             <div className="px-4 pb-4 flex justify-evenly items-center">
-              <a
-                href="#"
-                onClick={toggleMenu}
-                className="block text-white hover:bg-[#296582] p-2 rounded"
+              <button
+                onClick={() => {
+                  toggleMenu();
+                  handleNavigateAndScroll('home');
+                }}
+                className="block text-black hover:text-[#1b4e8c] font-semibold p-2 rounded cursor-pointer"
               >
                 Home
-              </a>
-              <a
-                href="#"
-                onClick={toggleMenu}
-                className="block text-white hover:bg-[#296582] p-2 rounded"
+              </button>
+              <button
+                onClick={() => {
+                  toggleMenu();
+                  handleNavigateAndScroll('about');
+                }}
+                className="block text-black hover:text-[#1b4e8c] font-semibold p-2 rounded cursor-pointer"
               >
                 About
-              </a>
-              <a
-                href="#"
-                onClick={toggleMenu}
-                className="block text-white hover:bg-[#296582] p-2 rounded"
+              </button>
+              <button
+                onClick={() => {
+                  toggleMenu();
+                  handleNavigateAndScroll('products');
+                }}
+                className="block text-black hover:text-[#1b4e8c] font-semibold p-2 rounded cursor-pointer"
               >
-                Services
-              </a>
-              <a
-                href="#"
-                onClick={toggleMenu}
-                className="block text-white hover:bg-[#296582] p-2 rounded"
+                Products
+              </button>
+              <button
+                onClick={() => {
+                  toggleMenu();
+                  handlePageNavigation('/contact');
+                }}
+                className="block text-black hover:text-[#1b4e8c] font-semibold p-2 rounded cursor-pointer"
               >
                 Contact
-              </a>
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 
