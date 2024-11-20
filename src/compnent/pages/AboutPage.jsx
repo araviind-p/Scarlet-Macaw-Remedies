@@ -1,12 +1,15 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Drolet from "../../assets/Drolet.png"
-import Finlet from "../../assets/Finlet.png"
-import Oxylet from "../../assets/Oxylet.png"
+import React from 'react';
+import { motion } from 'framer-motion';
+import Drolet from '../../assets/Drolet.png';
+import Finlet from '../../assets/Finlet.png';
+import Oxylet from '../../assets/Oxylet.png';
 
 const AboutPage = () => {
   return (
-    <section className="bg-gradient-to-r from-blue-50 via-white to-blue-50 py-16 px-6 sm:px-12 lg:px-24 pt-28">
+    <section
+      id="about"
+      className="bg-gradient-to-r from-blue-50 via-white to-blue-50 py-16 px-6 sm:px-12 lg:px-24 pt-28"
+    >
       <motion.div
         className="max-w-6xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
@@ -27,9 +30,10 @@ const AboutPage = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          Since 2014, Scarlet Macaw Remedies has been a leading pharmaceutical marketing company,
-          delivering high-quality medicines to patients across the nation. As a sister concern of Scarlet
-          Pharma, we take pride in our unwavering commitment to excellence.
+          Since 2014, Scarlet Macaw Remedies has been a leading pharmaceutical
+          marketing company, delivering high-quality medicines to patients
+          across the nation. As a sister concern of Scarlet Pharma, we take
+          pride in our unwavering commitment to excellence.
         </motion.p>
         <motion.p
           className="text-gray-700 text-lg leading-relaxed mb-8 text-center sm:text-left"
@@ -37,8 +41,9 @@ const AboutPage = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          Our partnerships with renowned manufacturers, such as Labindus, VTV, and Novel India, ensure
-          that our products meet the highest standards of quality, backed by WHO GMP certifications.
+          Our partnerships with renowned manufacturers, such as Labindus, VTV,
+          and Novel India, ensure that our products meet the highest standards
+          of quality, backed by WHO GMP certifications.
         </motion.p>
         <motion.div
           className="bg-white shadow-lg rounded-lg p-6 sm:p-8"
@@ -99,8 +104,9 @@ const AboutPage = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.6, duration: 0.8 }}
         >
-          As we celebrate this milestone, we assure our customers and stakeholders that we will
-          continue to launch innovative and effective products in the coming days.
+          As we celebrate this milestone, we assure our customers and
+          stakeholders that we will continue to launch innovative and effective
+          products in the coming days.
         </motion.p>
       </motion.div>
     </section>
