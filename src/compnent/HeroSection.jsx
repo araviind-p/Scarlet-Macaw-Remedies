@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import DOCTORTEAM from '../assets/doctorTeam.png';
 
 const HeroSection = () => {
   const [years, setYears] = useState(1);
@@ -72,7 +73,7 @@ const HeroSection = () => {
       >
         <div className="lg:w-[500px]">
           <motion.img
-            src="../src/assets/doctor-team.png" // Replace with your image path
+            src={DOCTORTEAM} // Replace with your image path
             alt="Doctor Team"
             className="rounded-lg shadow-md"
             whileHover={{ scale: 1.05 }}
