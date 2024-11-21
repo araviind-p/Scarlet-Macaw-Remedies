@@ -1,19 +1,17 @@
-import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.webp';
 
 const Footer = () => {
   return (
-    <footer className=" text-center text-neutral-800 bg-[#e9f9f9] lg:text-left">
-      <div className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between"></div>
+    <footer className=" text-center text-neutral-800 bg-[#e9f9f9] lg:text-left ">
+      <div className="flex  items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between"></div>
 
       {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
-      <div className="mx-6 py-8 text-center md:text-left">
-        <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-6 py-8 text-center md:text-left max-w-6xl sm:mx-auto">
+        <div className="grid-1 grid gap-8 md:grid-cols-3 lg:grid-cols-3">
           {/* <!-- TW Elements section --> */}
           <div className="">
             <h6 className="mb-4 flex items-center justify-center font-bold uppercase md:justify-start">
-              <img src={Logo} alt="Logo" className="h-24 w-24 mr-3" />
-              Scarlet macaw
+              Scarlet macaw Remedies
             </h6>
             <p className="text-justify">
               Your trusted partner in quality healthcare since 2014. Together,
@@ -21,32 +19,7 @@ const Footer = () => {
             </p>
           </div>
           {/* <!-- Products section --> */}
-          <div className="">
-            <h6 className="mb-4 flex justify-center font-bold uppercase md:justify-center">
-              Quick links
-            </h6>
-            <p className="mb-4 flex justify-center">
-              <Link to={'/'} className="text-neutral-800">
-                Home
-              </Link>
-            </p>
-            <p className="mb-4 flex justify-center">
-              <Link to={'/about'} className="text-neutral-800">
-                About
-              </Link>
-            </p>
-            <p className="mb-4 flex justify-center">
-              <Link to={'/services'} className="text-neutral-800">
-                Services
-              </Link>
-            </p>
-            <p className="flex justify-center">
-              <Link to={'/contact'} className="text-neutral-800">
-                Contact us
-              </Link>
-            </p>
-          </div>
-          {/* <!-- Useful links section --> */}
+
           <div className="">
             <h6 className="mb-4 flex justify-center font-bold uppercase md:justify-center">
               Inquiries
@@ -64,7 +37,7 @@ const Footer = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              + 91 8075748473
+              + 91 9061004666
             </p>
             <p className="mb-4 flex items-center justify-center md:justify-center">
               <svg
