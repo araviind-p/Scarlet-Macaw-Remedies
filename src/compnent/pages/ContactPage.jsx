@@ -1,11 +1,61 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    contact: '',
+    email: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [responseMessage, setResponseMessage] = useState('');
+
   useEffect(() => {
     // Scroll to top when the Contact page is loaded
     window.scrollTo(0, 0);
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setResponseMessage('');
+
+    const { name, contact, email, message } = formData;
+
+    try {
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Replace with your service ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Replace with your template ID
+        {
+          name,
+          contact,
+          email,
+          message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY, // Replace with your public key
+      );
+
+      setResponseMessage('Your message has been sent successfully!');
+      setFormData({
+        name: '',
+        contact: '',
+        email: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setResponseMessage('Failed to send your message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -85,38 +135,52 @@ const ContactUs = () => {
           >
             Get In Touch
           </h3>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <input
               type="text"
+              name="name"
               placeholder="Full Name*"
               className="w-full p-3 border rounded focus:outline-none focus:ring-2"
               style={{
                 borderColor: '#274756',
               }}
+              value={formData.name}
+              onChange={handleChange}
+              required
             />
             <input
               type="text"
+              name="contact"
               placeholder="Contact No"
               className="w-full p-3 border rounded focus:outline-none focus:ring-2"
               style={{
                 borderColor: '#274756',
               }}
+              value={formData.contact}
+              onChange={handleChange}
             />
             <input
               type="email"
+              name="email"
               placeholder="Email"
               className="w-full p-3 border rounded focus:outline-none focus:ring-2"
               style={{
                 borderColor: '#274756',
               }}
+              value={formData.email}
+              onChange={handleChange}
+              required
             />
             <textarea
+              name="message"
               rows="5"
               placeholder="Additional Message"
               className="w-full p-3 border rounded focus:outline-none focus:ring-2"
               style={{
                 borderColor: '#274756',
               }}
+              value={formData.message}
+              onChange={handleChange}
             ></textarea>
             <button
               type="submit"
@@ -124,10 +188,14 @@ const ContactUs = () => {
               style={{
                 backgroundColor: '#274756',
               }}
+              disabled={isSubmitting}
             >
-              Submit
+              {isSubmitting ? 'Sending...' : 'Submit'}
             </button>
           </form>
+          {responseMessage && (
+            <p className="mt-4 text-center text-gray-700">{responseMessage}</p>
+          )}
         </motion.div>
       </motion.div>
       <div className="responsive-map max-w-6xl mx-2 sm:mx-auto mt-10 rounded-lg">
