@@ -91,7 +91,7 @@ const AboutPage = () => {
           <div className="flex flex-wrap gap-8 justify-center">
             {/* DROLET Brand */}
             <motion.div
-              className="rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105"
+              className="rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 w-40 h-40"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.6 }}
@@ -105,7 +105,7 @@ const AboutPage = () => {
 
             {/* OXYLET Brand */}
             <motion.div
-              className="rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105"
+              className="rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 w-40 h-40"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2, duration: 0.6 }}
@@ -119,7 +119,7 @@ const AboutPage = () => {
 
             {/* FINLET Brand */}
             <motion.div
-              className="rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105"
+              className="rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 w-40 h-40"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.4, duration: 0.6 }}
