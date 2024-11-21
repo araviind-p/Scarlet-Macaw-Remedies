@@ -1,12 +1,10 @@
-import Logo from '../assets/logo.webp';
-
 const Footer = () => {
   return (
     <footer className=" text-center text-neutral-800 bg-[#e9f9f9] lg:text-left ">
       <div className="flex  items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between"></div>
 
       {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
-      <div className="mx-6 py-8 text-center md:text-left max-w-6xl sm:mx-auto">
+      <div className="mx-6 pt-8 text-center md:text-left max-w-6xl sm:mx-auto">
         <div className="grid-1 grid gap-8 md:grid-cols-3 lg:grid-cols-3">
           {/* <!-- TW Elements section --> */}
           <div className="">
@@ -21,15 +19,15 @@ const Footer = () => {
           {/* <!-- Products section --> */}
 
           <div className="">
-            <h6 className="mb-4 flex justify-center font-bold uppercase md:justify-center">
+            <h6 className="mb-2 flex justify-center font-bold uppercase md:justify-start">
               Inquiries
             </h6>
-            <p className="mb-4 flex items-center justify-center md:justify-center">
+            <p className="mb-2 flex items-center justify-center md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="mr-3 h-5 w-5"
+                className="mr-1 h-5 w-5"
               >
                 <path
                   fillRule="evenodd"
@@ -39,7 +37,7 @@ const Footer = () => {
               </svg>
               + 91 9061004666
             </p>
-            <p className="mb-4 flex items-center justify-center md:justify-center">
+            <p className="mb-3 flex items-center justify-center md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -54,19 +52,10 @@ const Footer = () => {
           </div>
           {/* <!-- Contact section --> */}
           <div className="">
-            <h6 className="mb-4 flex justify-center font-bold uppercase md:justify-center">
+            <h6 className="mb-2 flex justify-center font-bold uppercase md:justify-start">
               Visit us
             </h6>
-            <p className="mb-4 flex items-center justify-center md:justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="mr-3 h-14 w-14"
-              >
-                <path d="M12 2C8.686 2 6 4.686 6 8c0 4.672 5.145 10.654 5.408 10.943a.75.75 0 001.184 0C12.855 18.654 18 12.672 18 8c0-3.314-2.686-6-6-6zm0 16.34C10.36 15.6 7.5 11.88 7.5 8c0-2.485 2.015-4.5 4.5-4.5s4.5 2.015 4.5 4.5c0 3.88-2.86 7.6-4.5 10.34z" />
-                <path d="M12 10.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5zm0-3a.75.75 0 110 1.5.75.75 0 010-1.5z" />
-              </svg>
+            <p className=" flex items-center justify-center md:justify-start">
               12/1207F, 1&apos;st Floor Apple Square Building, Airport road,
               Ramanattukara, Kozhikode, 673633, Kerala
             </p>
@@ -75,15 +64,8 @@ const Footer = () => {
       </div>
 
       {/* <!--Copyright section--> */}
-      <div className="text-neutral-800 p-6 text-center bg-[#e9f9f9]">
-        <span>© {new Date().getFullYear()} Copyright : </span>
-
-        <a
-          className="font-semibold text-neutral-800"
-          href="https://tw-elements.com/"
-        >
-          Scarlet Macaw Remedies
-        </a>
+      <div className="text-neutral-800 py-6 text-center bg-[#e9f9f9]">
+        <span>© {new Date().getFullYear()} Copyright</span>
       </div>
     </footer>
   );

@@ -53,7 +53,7 @@ const ContactUs = () => {
                 CALL US
               </h3>
             </div>
-            <p className="text-gray-700">Phone : +91 8075748473</p>
+            <p className="text-gray-700">Phone : +91 9061004666</p>
           </div>
 
           <div>
