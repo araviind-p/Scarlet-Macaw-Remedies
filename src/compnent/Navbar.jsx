@@ -131,9 +131,9 @@ const Navbar = () => {
               duration: 0.3,
               ease: [0.25, 0.8, 0.5, 1], // Smooth easing curve
             }}
-            className="md:hidden overflow-hidden min-h-screen flex flex-col justify-center -mt-20 bg-[#e9f9f9] shadow-lg"
+            className="md:hidden overflow-hidden min-h-screen flex flex-col justify-center bg-[#e9f9f9] shadow-lg"
           >
-            <div className="px-4 pb-4 flex flex-col justify-evenly items-center text-2xl">
+            <div className="px-4 pb-4 flex flex-col justify-evenly items-center text-2xl -mt-24">
               <button
                 onClick={() => {
                   toggleMenu();
