@@ -24,16 +24,16 @@ const Card = ({ image, title, description, buttonText }) => {
                 <h2 className="text-xl font-bold text-gray-800 mb-2">{title}</h2>
 
                 {/* Description */}
-                <p className="text-gray-600 mb-4">{description}</p>
+                {/* <p className="text-gray-600 mb-4">{description}</p> */}
 
                 {/* Button */}
-                <motion.button
+                {/* <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700"
                 >
-                    {buttonText}
-                </motion.button>
+                    {buttonText} */}
+                {/* </motion.button> */}
             </div>
         </motion.div>
     );
