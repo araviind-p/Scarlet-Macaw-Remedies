@@ -13,7 +13,7 @@ const App = () => {
       {/* <HomePage/> */}
 
       {/* Main Content Area */}
-      <div className="pt-16">
+      <div className="pt-16 bg-[#e9f9f9]">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
