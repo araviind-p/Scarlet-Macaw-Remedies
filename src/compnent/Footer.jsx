@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className=" text-center text-neutral-800 bg-[#e9f9f9] lg:text-left ">
+    <footer className=" text-center text-neutral-800 bg-[#e9f9f9] lg:text-left px-3">
       <div className="flex  items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between"></div>
 
       {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
