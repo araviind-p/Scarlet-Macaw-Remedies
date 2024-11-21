@@ -135,7 +135,7 @@ const AboutPage = () => {
 
         <section className=" py-16">
           <div className="max-w-6xl mx-auto text-center">
-            <h3 className="text-blue-400 font-semibold uppercase mb-2">
+            <h3 className="text-blue-700 font-semibold uppercase mb-2 text-xl">
               Fastest Solution
             </h3>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1a4c90] mb-10">
@@ -143,18 +143,23 @@ const AboutPage = () => {
             </h2>
             <div className="grid md:grid-cols-4 gap-6">
               {steps.map((step) => (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  whileHover={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.95 }}
                   key={step.id}
-                  className="flex flex-col items-center text-center shadow-md rounded-lg p-3"
+                  className="flex flex-col items-center text-center shadow-md rounded-lg p-3 cursor-default"
                 >
-                  <div className="w-16 h-16 flex items-center justify-center bg-blue-100 text-blue-500 rounded-lg mb-4">
+                  <div className="w-16 h-16 flex items-center justify-center bg-gray-100 text-[#1f4c9e] rounded-lg mb-4">
                     {step.icon}
                   </div>
                   <h4 className="font-semibold text-lg text-gray-800 mb-2">
                     {step.title}
                   </h4>
                   <p className="text-gray-800 text-md">{step.description}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

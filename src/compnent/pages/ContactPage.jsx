@@ -39,7 +39,7 @@ const ContactUs = () => {
           email,
           message,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY, // Replace with your public key
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Replace with your public key
       );
 
       setResponseMessage('Your message has been sent successfully!');
@@ -60,7 +60,7 @@ const ContactUs = () => {
   return (
     <>
       <motion.div
-        className="flex flex-col lg:flex-row max-w-6xl mx-auto mt-14 bg-white rounded-lg shadow-md px-2"
+        className="flex flex-col lg:flex-row max-w-6xl mx-auto mt-14 bg-white rounded-lg shadow-md sm:px-0 px-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
