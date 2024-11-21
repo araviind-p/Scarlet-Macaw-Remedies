@@ -35,11 +35,11 @@ const HeroSection = () => {
           Protecting You and Your Family
         </h1>
         <p className="text-gray-600 mb-6">
-          The health and well-being of our patients and their health care team
-          will always be our priority, so we’ll follow the best practices for
-          cleanliness.
+          Scarlet Macaw Remedies is dedicated to enhancing lives with trusted,
+          safe, and effective medicines. We put patients first because your
+          well-being matters most.
         </p>
-        <div className="flex flex-col sm:flex-row justify-evenly sm:justify-start items-center gap-y-4 sm:gap-y-0">
+        <div className="flex flex-col sm:flex-row justify-evenly sm:justify-start items-center gap-y-6 sm:gap-y-0">
           <div className="flex items-center">
             <motion.h1
               className="text-5xl font-bold text-[#1A4D8F]"
@@ -49,18 +49,18 @@ const HeroSection = () => {
             >
               {years}+
             </motion.h1>
-            <span className="text-xl ml-2 text-gray-800 mr-0 sm:mr-6">
-              Years Of Excellence
+            <span className="text-xl ml-0 sm:ml-3 text-gray-800 mr-0 sm:mr-6">
+              Years Of Certified Medical Excellence
             </span>
           </div>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-yellow-500 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-yellow-600 transition"
-          >
-            <Link to={'/contact'}>Contact Us</Link>
-          </motion.button>
         </div>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-yellow-500 text-white font-semibold mt-6  py-3 px-3 rounded-lg shadow-lg hover:bg-yellow-600 transition"
+        >
+          <Link to={'/contact'}>Contact Us</Link>
+        </motion.button>
       </motion.div>
 
       {/* Right Content */}

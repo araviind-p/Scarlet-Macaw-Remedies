@@ -53,7 +53,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`bg-[#e9f9f9] text-black shadow-md z-10 fixed w-full bg-opacity-95 transition-transform ${
+      className={`bg-[#e9f9f9] text-black z-10 fixed w-full bg-opacity-95 transition-transform ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
@@ -124,12 +124,16 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden overflow-hidden"
+            initial={{ opacity: 0, scale: 0.9, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: -20 }}
+            transition={{
+              duration: 0.3,
+              ease: [0.25, 0.8, 0.5, 1], // Smooth easing curve
+            }}
+            className="md:hidden overflow-hidden min-h-screen flex flex-col justify-center -mt-20 bg-[#e9f9f9] shadow-lg"
           >
-            <div className="px-4 pb-4 flex justify-evenly items-center">
+            <div className="px-4 pb-4 flex flex-col justify-evenly items-center text-2xl">
               <button
                 onClick={() => {
                   toggleMenu();
