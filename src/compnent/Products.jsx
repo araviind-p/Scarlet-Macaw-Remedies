@@ -3,8 +3,8 @@ import Card from './Card';
 
 const Products = () => {
   return (
-    <div id="products" className="py-16 px-6 sm:px-12 lg:px-24 pt-28">
-      <h1 className="font-bold text-3xl items-center justify-center flex">
+    <div id="products" className="pt-16 px-6 sm:px-12 lg:px-24">
+      <h1 className="font-bold text-[#1c4e92] text-3xl sm:text-4xl items-center justify-center flex">
         Our Range Of Products
       </h1>
       <div className="grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16">

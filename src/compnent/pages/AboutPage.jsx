@@ -8,7 +8,7 @@ const AboutPage = () => {
   return (
     <section
       id="about"
-      className="bg-gradient-to-r from-blue-50 via-white to-blue-50 py-16 px-6 sm:px-12 lg:px-24 pt-28"
+      className="bg-gradient-to-r from-blue-50 via-white to-blue-50 py-16 px-6 sm:px-12 lg:px-24"
     >
       <motion.div
         className="max-w-6xl mx-auto"
@@ -25,7 +25,7 @@ const AboutPage = () => {
           Scarlet Macaw Remedies: Celebrating 10 Years of Excellence
         </motion.h2>
         <motion.p
-          className="text-gray-700 text-lg leading-relaxed mb-8 text-center sm:text-left"
+          className="text-justify text-gray-700 text-lg leading-relaxed mb-8 sm:text-left"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
@@ -36,7 +36,7 @@ const AboutPage = () => {
           pride in our unwavering commitment to excellence.
         </motion.p>
         <motion.p
-          className="text-gray-700 text-lg leading-relaxed mb-8 text-center sm:text-left"
+          className="text-gray-700 text-lg leading-relaxed mb-8 text-justify sm:text-left"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
@@ -51,7 +51,7 @@ const AboutPage = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
-          <h3 className="text-3xl font-semibold text-blue-900 mb-4">
+          <h3 className="text-3xl font-bold text-blue-900 mb-8 flex items-center justify-center">
             Our Top-Selling Brands
           </h3>
           <div className="flex flex-wrap gap-6 justify-center">
@@ -65,7 +65,7 @@ const AboutPage = () => {
               <img
                 src={Drolet}
                 alt="DROLET"
-                className="w-40 h-40 object-cover"
+                className="w-full h-48 object-cover"
               />
             </motion.div>
 
@@ -79,7 +79,7 @@ const AboutPage = () => {
               <img
                 src={Oxylet}
                 alt="OXYLET"
-                className="w-40 h-40 object-cover"
+                className="w-full h-48 object-cover"
               />
             </motion.div>
 
@@ -93,7 +93,7 @@ const AboutPage = () => {
               <img
                 src={Finlet}
                 alt="FINLET"
-                className="w-40 h-40 object-cover"
+                className="w-full h-48 object-cover"
               />
             </motion.div>
           </div>
