@@ -23,7 +23,7 @@ const HeroSection = () => {
   return (
     <div
       id="home"
-      className=" min-h-screen -mt-10 sm:-mt-10  bg-[#E9F8F9] py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-evenly gap-x-14 gap-y-14 font-poppins"
+      className=" min-h-screen -mt-9 sm:mt-6 lg:-mt-10  bg-[#E9F8F9] py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-evenly gap-x-14 gap-y-14 font-poppins"
     >
       {/* Left Content */}
       <motion.div
