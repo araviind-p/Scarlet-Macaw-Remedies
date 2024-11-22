@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className=" text-center text-neutral-800 bg-[#e9f9f9] lg:text-left px-3">
+    <footer className=" text-center text-neutral-800 bg-[#e9f9f9] lg:text-left">
       <div className="flex  items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between"></div>
 
       {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
@@ -47,7 +47,7 @@ const Footer = () => {
                 <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                 <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
               </svg>
-              scarletmacawremedies@gmail.com
+              scarletmacawremediesclt@outlook.com
             </p>
           </div>
           {/* <!-- Contact section --> */}
