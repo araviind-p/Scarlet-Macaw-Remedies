@@ -61,6 +61,11 @@ const ContactUs = () => {
 
   return (
     <>
+      <div className="flex justify-center items-center pt-10 sm:pt-0">
+        <h1 className="font-bold text-3xl text-[#1f4c9e]">
+          Feel Free To Contact Us
+        </h1>
+      </div>
       <motion.div
         className="flex flex-col lg:flex-row max-w-6xl mx-auto mt-14 bg-white rounded-lg shadow-md sm:px-0 px-2"
         initial={{ opacity: 0 }}
@@ -120,7 +125,7 @@ const ContactUs = () => {
                 MAIL US
               </h3>
             </div>
-            <p className="text-gray-700">scarletmacawremedies@gmail.com</p>
+            <p className="text-gray-700">scarletmacawremediesclt@outlook.com</p>
           </div>
         </motion.div>
 
