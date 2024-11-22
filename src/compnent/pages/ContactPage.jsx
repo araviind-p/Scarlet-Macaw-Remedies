@@ -28,9 +28,9 @@ const ContactUs = () => {
     setResponseMessage('');
 
     const { name, contact, email, message } = formData;
-    const VITE_EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const VITE_EMAILJS_TEMPLATE_ID = import.meta.env.template_c2taj5u;
-    const VITE_EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const VITE_EMAILJS_SERVICE_ID = 'service_u1k54k4';
+    const VITE_EMAILJS_TEMPLATE_ID = 'template_c2taj5u';
+    const VITE_EMAILJS_PUBLIC_KEY = 'M67wV3Sy7j26cB7CV';
     try {
       const result = await emailjs.send(
         VITE_EMAILJS_SERVICE_ID, // Replace with your service ID
