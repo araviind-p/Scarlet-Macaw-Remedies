@@ -35,7 +35,7 @@ const HeroSection = () => {
         <h1 className="text-4xl sm:text-6xl font-bold text-[#1A4D8F] leading-tight mb-4">
           Protecting You and Your Family
         </h1>
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 mb-6 text-justify">
           Scarlet Macaw Remedies is dedicated to enhancing lives with trusted,
           safe, and effective medicines. We put patients first because your
           well-being matters most.
@@ -50,7 +50,7 @@ const HeroSection = () => {
             >
               {years}+
             </motion.h1>
-            <span className="text-xl ml-0 sm:ml-3 text-gray-800 mr-0 sm:mr-6">
+            <span className="text-xl ml-0 sm:ml-3 text-gray-900 mr-0 sm:mr-6">
               Years Of Certified Medical Excellence
             </span>
           </div>
@@ -71,7 +71,7 @@ const HeroSection = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
       >
-        <div className="lg:w-[500px]">
+        <div className="lg:w-[700px]">
           <motion.img
             src={DOCTORTEAM} // Replace with your image path
             alt="Doctor Team"
