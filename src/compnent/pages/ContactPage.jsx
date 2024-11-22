@@ -61,7 +61,7 @@ const ContactUs = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center pt-10 sm:pt-0">
+      <div className="flex justify-center items-center pt-12 sm:pt-10">
         <h1 className="font-bold text-3xl text-[#1f4c9e]">
           Feel Free To Contact Us
         </h1>
