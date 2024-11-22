@@ -138,6 +138,43 @@ const AboutPage = () => {
           </motion.div>
         </div>
       </motion.div>
+      <section className="py-16" ref={stepsRef}>
+        <motion.div
+          className="max-w-6xl mx-auto text-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isStepsInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1 }}
+        >
+          <h3 className="text-blue-400 font-semibold uppercase mb-2">
+            Fastest Solution
+          </h3>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a4c90] mb-10">
+            Easy Steps to Get Your Solution
+          </h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            {steps.map((step) => (
+              <motion.div
+                key={step.id}
+                initial={{ opacity: 0, y: 50 }}
+                animate={isStepsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: step.id * 0.2, duration: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col items-center text-center shadow-md rounded-lg p-3 cursor-pointer"
+              >
+                <div className="w-16 h-16 flex items-center justify-center bg-blue-100 text-blue-500 rounded-lg mb-4">
+                  {step.icon}
+                </div>
+                <h4 className="font-semibold text-lg text-gray-800 mb-2">
+                  {step.title}
+                </h4>
+                <p className="text-gray-800 text-md">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
     </section>
   );
 };
