@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Card from './Card'; // Assuming Card is your product display component
 
-// Product images (import them correctly based on your folder structure)
+// Import product images
 import DROLET from '../assets/Gynecology Range/DROLET.png';
 import UTFOROLL from '../assets/Gynecology Range/UT_FOROLL.png';
 import FOROL_XT from '../assets/Gynecology Range/FOROL_XT.png';
@@ -48,14 +48,20 @@ const productsData = [
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [visibleCount, setVisibleCount] = useState(8); // Initial visible count
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
+    setVisibleCount(8); // Reset visible count on category change
+  };
+
+  const handleLoadMore = () => {
+    setVisibleCount((prevCount) => prevCount + 8);
   };
 
   const filteredProducts =
     selectedCategory === 'All'
-      ? productsData
+      ? productsData.slice(0, visibleCount)
       : productsData.filter((product) => product.category === selectedCategory);
 
   return (
@@ -107,6 +113,18 @@ const Products = () => {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+
+      {/* Load More Button */}
+      {selectedCategory === 'All' && visibleCount < productsData.length && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={handleLoadMore}
+            className="px-6 py-3 bg-[#1c4e92] text-white font-medium rounded-md hover:bg-[#163a6b]"
+          >
+            Load More
+          </button>
+        </div>
+      )}
     </div>
   );
 };
@@ -119,10 +137,10 @@ const ProductCard = ({ product }) => {
     <motion.div
       ref={ref}
       className=""
-      initial={{ opacity: 0, x: 50, y: 50 }} // Start from bottom-right
+      initial={{ opacity: 0, x: 50, y: 50 }}
       animate={
         isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: 50, y: 50 }
-      } // Animate every time
+      }
       transition={{ duration: 0.5 }}
     >
       <Card image={product.image} title={product.title} />
