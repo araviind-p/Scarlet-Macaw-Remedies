@@ -1,11 +1,15 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Drolet from '../../assets/Drolet.png';
-import Finlet from '../../assets/Finlet.png';
-import Oxylet from '../../assets/Oxylet.png';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { FaCheck, FaFileAlt, FaPen, FaUser } from 'react-icons/fa';
 
 const AboutPage = () => {
+  const topSellingRef = useRef(null);
+  const stepsRef = useRef(null);
+
+  // Track when each section is in view
+  const isTopSellingInView = useInView(topSellingRef, { triggerOnce: true });
+  const isStepsInView = useInView(stepsRef, { triggerOnce: true });
+
   const steps = [
     {
       id: 1,
@@ -31,16 +35,18 @@ const AboutPage = () => {
     {
       id: 4,
       icon: <FaCheck size={32} />,
-      title: 'Innovative solutions',
+      title: 'Innovative Solutions',
       description:
-        'We embrace cutting-edge technology and research to develop advanced, impactful pharmaceutical products that enhance lives.',
+        'We embrace cutting-edge technology and research to develop advanced, impactful pharmaceutical products that enhance lives.',
     },
   ];
+
   return (
     <section
       id="about"
       className="bg-gradient-to-r from-blue-50 via-white to-blue-50 py-16 px-6 sm:px-12 lg:px-24"
     >
+      {/* Intro Section */}
       <motion.div
         className="max-w-6xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
@@ -56,7 +62,7 @@ const AboutPage = () => {
           Scarlet Macaw Remedies : Celebrating 10 Years of Excellence
         </motion.h2>
         <motion.p
-          className=" text-gray-700 text-lg leading-relaxed mb-8 text-center"
+          className="text-gray-700 text-lg leading-relaxed mb-8 text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
@@ -67,7 +73,7 @@ const AboutPage = () => {
           pride in our unwavering commitment to excellence.
         </motion.p>
         <motion.p
-          className="text-gray-700 text-lg leading-relaxed mb-8 text-center sm:text-center"
+          className="text-gray-700 text-lg leading-relaxed mb-8 text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
@@ -79,11 +85,14 @@ const AboutPage = () => {
           continue to launch innovative and effective products in the coming
           days.
         </motion.p>
+
+        {/* Our Top-Selling Brands Section */}
         <motion.div
+          ref={topSellingRef}
           className="rounded-lg p-6 sm:p-8 shadow-md"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isTopSellingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1 }}
         >
           <h3 className="text-3xl font-bold text-blue-900 mb-8 flex items-center justify-center">
             Our Top-Selling Brands
@@ -91,50 +100,44 @@ const AboutPage = () => {
           <div className="flex flex-wrap gap-8 justify-center">
             {/* DROLET Brand */}
             <motion.div
-              className="rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 w-40 h-40"
+              className="text-center text-lg font-semibold text-blue-900 transform transition-transform hover:scale-105 bg-red-200 p-3 rounded-md"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 0.6 }}
+              animate={isTopSellingInView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <img
-                src={Drolet}
-                alt="DROLET"
-                className="w-full h-48 object-cover"
-              />
+              DROLET
             </motion.div>
 
             {/* OXYLET Brand */}
             <motion.div
-              className="rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 w-40 h-40"
+              className="text-center text-lg font-semibold text-blue-900 transform transition-transform hover:scale-105 bg-yellow-200 p-3 rounded-md"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
+              animate={isTopSellingInView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.4, duration: 0.6 }}
             >
-              <img
-                src={Oxylet}
-                alt="OXYLET"
-                className="w-full h-48 object-cover"
-              />
+              OXYLET
             </motion.div>
 
             {/* FINLET Brand */}
             <motion.div
-              className="rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105 w-40 h-40"
+              className="text-center text-lg font-semibold text-blue-900 transform transition-transform hover:scale-105 bg-orange-300 p-3 rounded-md"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.4, duration: 0.6 }}
+              animate={isTopSellingInView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.6, duration: 0.6 }}
             >
-              <img
-                src={Finlet}
-                alt="FINLET"
-                className="w-full h-48 object-cover"
-              />
+              FINLET
             </motion.div>
           </div>
         </motion.div>
 
-        <section className=" py-16">
-          <div className="max-w-6xl mx-auto text-center">
+        {/* Easy Steps to Get Your Solution Section */}
+        <section className="py-16" ref={stepsRef}>
+          <motion.div
+            className="max-w-6xl mx-auto text-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isStepsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1 }}
+          >
             <h3 className="text-blue-700 font-semibold uppercase mb-2 text-xl">
               Fastest Solution
             </h3>
@@ -145,8 +148,8 @@ const AboutPage = () => {
               {steps.map((step) => (
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
+                  animate={isStepsInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: step.id * 0.2, duration: 0.5 }}
                   whileHover={{ scale: 0.95 }}
                   whileTap={{ scale: 0.95 }}
                   key={step.id}
@@ -162,7 +165,7 @@ const AboutPage = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </section>
       </motion.div>
     </section>
