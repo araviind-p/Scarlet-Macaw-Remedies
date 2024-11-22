@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import Card from './Card';
 import DROLET from '../assets/Gynecology Range/DROLET.png';
 import UTFOROLL from '../assets/Gynecology Range/UT_FOROLL.png';
@@ -41,6 +42,10 @@ const productsData = [
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
+  // Ref and InView for animations
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { triggerOnce: true });
+
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
   };
@@ -51,13 +56,31 @@ const Products = () => {
       : productsData.filter((product) => product.category === selectedCategory);
 
   return (
-    <div id="products" className="pt-16 px-6 sm:px-12 lg:px-24">
-      <h1 className="font-bold text-[#1c4e92] text-3xl sm:text-4xl items-center justify-center flex">
+    <motion.div
+      id="products"
+      className="pt-16 px-6 sm:px-12 lg:px-24"
+      ref={sectionRef}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+    >
+      {/* Heading */}
+      <motion.h1
+        className="font-bold text-[#1c4e92] text-3xl sm:text-4xl items-center justify-center flex"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
         Our Range Of Products
-      </h1>
+      </motion.h1>
 
       {/* Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-4 mt-8">
+      <motion.div
+        className="flex flex-wrap justify-center gap-4 mt-8"
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
         {[
           'All',
           'Gynecology',
@@ -80,15 +103,27 @@ const Products = () => {
             {category}
           </button>
         ))}
-      </div>
+      </motion.div>
 
       {/* Products Grid */}
-      <div className="grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16 gap-6">
-        {filteredProducts.map((product) => (
-          <Card key={product.id} image={product.image} title={product.title} />
+      <motion.div
+        className="grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16 gap-6"
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
+        {filteredProducts.map((product, index) => (
+          <motion.div
+            key={product.id}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <Card image={product.image} title={product.title} />
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
