@@ -152,7 +152,7 @@ const AboutPage = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-[#1a204c] mb-10">
             Our Core Values and Commitments
           </h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step) => (
               <motion.div
                 whileHover={{ scale: 1.1 }}
