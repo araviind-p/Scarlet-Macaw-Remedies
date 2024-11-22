@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import Card from './Card';
+import Card from './Card'; // Assuming Card is your product display component
+
+// Product images (import them correctly based on your folder structure)
 import DROLET from '../assets/Gynecology Range/DROLET.png';
 import UTFOROLL from '../assets/Gynecology Range/UT_FOROLL.png';
 import FOROL_XT from '../assets/Gynecology Range/FOROL_XT.png';
@@ -12,15 +14,16 @@ import FINLET from '../assets/Pediatric Range/FINLET.png';
 import INSTABONE from '../assets/Ortho Range/INSTABONE.png';
 import CASSOWARY from '../assets/Ortho Range/CASSOWARY.png';
 import PUFFIN_6 from '../assets/Ortho Range/PUFFIN_6.png';
-import DICLOFINE_GEL from '../assets/Ortho Range/DICLOFINE_GEL.png'
+import DICLOFINE_GEL from '../assets/Ortho Range/DICLOFINE_GEL.png';
 import TRAMLET_P from '../assets/Ortho Range/TRAMLET_P.png';
 import MACOPAN from '../assets/Gastro Range/MACOPAN.png';
 import MACOPAN_DSR from '../assets/Gastro Range/MACOPAN_DSR.png';
 import SILVELET from '../assets/Skin Range/SILVELET.png';
 import FUNGILET_CREAM from '../assets/Skin Range/FUNGILET_CREAM.png';
-import MUPIROSE from '../assets/Skin Range/MUPIROSE.png'
+import MUPIROSE from '../assets/Skin Range/MUPIROSE.png';
 import MOBILET_P from '../assets/Others/MOBILET_P.png';
 
+// Products Data
 const productsData = [
   { id: 1, image: DROLET, title: 'DROLET', category: 'Gynecology' },
   { id: 2, image: UTFOROLL, title: 'UTFOROLL', category: 'Gynecology' },
@@ -46,10 +49,6 @@ const productsData = [
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  // Ref and InView for animations
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { triggerOnce: true });
-
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
   };
@@ -60,20 +59,13 @@ const Products = () => {
       : productsData.filter((product) => product.category === selectedCategory);
 
   return (
-    <motion.div
-      id="products"
-      className="pt-16 px-6 sm:px-12 lg:px-24"
-      ref={sectionRef}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8 }}
-    >
+    <div id="products" className="pt-16 px-6 sm:px-12 lg:px-24">
       {/* Heading */}
       <motion.h1
         className="font-bold text-[#1c4e92] text-3xl sm:text-4xl items-center justify-center flex"
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={isInView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
       >
         Our Range Of Products
       </motion.h1>
@@ -82,8 +74,8 @@ const Products = () => {
       <motion.div
         className="flex flex-wrap justify-center gap-4 mt-8"
         initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, delay: 0.4 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
       >
         {[
           'All',
@@ -98,10 +90,11 @@ const Products = () => {
           <button
             key={category}
             onClick={() => handleCategoryChange(category)}
-            className={`px-4 py-2 rounded-md font-medium ${selectedCategory === category
-                ? 'bg-[#1f4c9e] text-white'
+            className={`px-4 py-2 rounded-md font-medium ${
+              selectedCategory === category
+                ? 'bg-[#1c4e92] text-white'
                 : 'bg-gray-200 text-gray-800'
-              }`}
+            }`}
           >
             {category}
           </button>
@@ -109,23 +102,30 @@ const Products = () => {
       </motion.div>
 
       {/* Products Grid */}
-      <motion.div
-        className="grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16 gap-6"
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-        transition={{ duration: 0.8, delay: 0.6 }}
-      >
-        {filteredProducts.map((product, index) => (
-          <motion.div
-            key={product.id}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <Card image={product.image} title={product.title} />
-          </motion.div>
+      <div className="grid justify-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16 gap-6 sm:gap-5">
+        {filteredProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
-      </motion.div>
+      </div>
+    </div>
+  );
+};
+
+const ProductCard = ({ product }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { triggerOnce: false });
+
+  return (
+    <motion.div
+      ref={ref}
+      className=""
+      initial={{ opacity: 0, x: 50, y: 50 }} // Start from bottom-right
+      animate={
+        isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: 50, y: 50 }
+      } // Animate every time
+      transition={{ duration: 0.5 }}
+    >
+      <Card image={product.image} title={product.title} />
     </motion.div>
   );
 };

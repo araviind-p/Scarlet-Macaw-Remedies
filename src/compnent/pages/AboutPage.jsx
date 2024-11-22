@@ -58,12 +58,12 @@ const AboutPage = () => {
       >
         {/* Heading */}
         <motion.h2
-          className="text-4xl font-extrabold text-[#018bc9] mb-8 text-center"
+          className="text-4xl font-extrabold text-[#1a204c] mb-8 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={isIntroView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Scarlet Macaw Remedies: Celebrating 10 Years of Excellence
+          Delivering Excellence with Certified Expertise
         </motion.h2>
 
         {/* Paragraph 1 */}
@@ -73,10 +73,12 @@ const AboutPage = () => {
           animate={isIntroView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          Since 2014, Scarlet Macaw Remedies has been a leading pharmaceutical
-          marketing company, delivering high-quality medicines to patients
-          across the nation. As a sister concern of Scarlet Pharma, we take
-          pride in our unwavering commitment to excellence.
+          Since 2014, Scarlet Macaw Remedies has been a trusted pharmaceutical
+          marketing company, providing high-quality medicines nationwide. As a
+          sister concern of Scarlet Pharma, we are committed to excellence,
+          partnering with leading manufacturers to deliver safe, effective
+          healthcare solutions that prioritize patient well-being and promote a
+          healthier future.
         </motion.p>
 
         {/* Paragraph 2 */}
@@ -103,13 +105,13 @@ const AboutPage = () => {
         animate={isTopSellingInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1 }}
       >
-        <h3 className="text-3xl font-bold text-blue-900 mb-8 flex items-center justify-center">
+        <h3 className="text-3xl font-bold text-[#1a204c] mb-8 flex items-center justify-center">
           Our Top-Selling Brands
         </h3>
         <div className="flex flex-wrap gap-8 justify-center">
           {/* DROLET Brand */}
           <motion.div
-            className="text-center text-lg font-semibold text-blue-900 transform transition-transform hover:scale-105 bg-red-200 p-3 rounded-md"
+            className="text-center cursor-default text-lg font-semibold text-blue-900 transform transition-transform hover:scale-105 bg-red-200 p-3 rounded-md"
             initial={{ opacity: 0 }}
             animate={isTopSellingInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -119,7 +121,7 @@ const AboutPage = () => {
 
           {/* OXYLET Brand */}
           <motion.div
-            className="text-center text-lg font-semibold text-blue-900 transform transition-transform hover:scale-105 bg-yellow-200 p-3 rounded-md"
+            className="text-center cursor-default text-lg font-semibold text-blue-900 transform transition-transform hover:scale-105 bg-yellow-200 p-3 rounded-md"
             initial={{ opacity: 0 }}
             animate={isTopSellingInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -129,7 +131,7 @@ const AboutPage = () => {
 
           {/* FINLET Brand */}
           <motion.div
-            className="text-center text-lg font-semibold text-blue-900 transform transition-transform hover:scale-105 bg-orange-300 p-3 rounded-md"
+            className="text-center cursor-default text-lg font-semibold text-blue-900 transform transition-transform hover:scale-105 bg-orange-300 p-3 rounded-md"
             initial={{ opacity: 0 }}
             animate={isTopSellingInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.6, duration: 0.6 }}
@@ -145,24 +147,33 @@ const AboutPage = () => {
           animate={isStepsInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
         >
-          <h3 className="text-blue-400 font-semibold uppercase mb-2">
-            Fastest Solution
-          </h3>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a4c90] mb-10">
-            Easy Steps to Get Your Solution
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a204c] mb-10">
+            Our Core Values and Commitments
           </h2>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-4 gap-8">
             {steps.map((step) => (
               <motion.div
                 key={step.id}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={isStepsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: step.id * 0.2, duration: 0.5 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                transition={{
+                  type: 'spring', // Adds a spring-like smoothness
+                  stiffness: 70, // Controls the spring's tightness
+                  damping: 10, // Reduces oscillation
+                  delay: step.id * 0.2, // Adds delay based on the step ID
+                  duration: 0.5, // Ensures the animation is not too abrupt
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { type: 'spring', stiffness: 150, damping: 8 }, // Smooth hover effect
+                }}
+                whileTap={{
+                  scale: 0.95,
+                  transition: { type: 'spring', stiffness: 200, damping: 10 }, // Slight bounce on tap
+                }}
                 className="flex flex-col items-center text-center shadow-md rounded-lg p-3 cursor-pointer"
               >
-                <div className="w-16 h-16 flex items-center justify-center bg-blue-100 text-blue-500 rounded-lg mb-4">
+                <div className="w-16 h-16 flex items-center justify-center bg-gray-100 text-[#1A4D8F] rounded-lg mb-4">
                   {step.icon}
                 </div>
                 <h4 className="font-semibold text-lg text-gray-800 mb-2">
@@ -174,7 +185,6 @@ const AboutPage = () => {
           </div>
         </motion.div>
       </section>
-
     </section>
   );
 };
