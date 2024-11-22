@@ -6,8 +6,8 @@ import Logo from '/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0); // Store last scroll position
-  const [isVisible, setIsVisible] = useState(true); // Track if navbar is visible
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -32,22 +32,17 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Hide navbar on scroll down, show on scroll up
   const handleScroll = () => {
     if (window.scrollY > lastScrollY) {
-      // If scrolling down, hide navbar
       setIsVisible(false);
     } else {
-      // If scrolling up, show navbar
       setIsVisible(true);
     }
-    setLastScrollY(window.scrollY); // Update last scroll position
+    setLastScrollY(window.scrollY);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll); // Listen for scroll events
-
-    // Clean up the scroll event listener when component unmounts
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
@@ -57,19 +52,17 @@ const Navbar = () => {
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-16 pt-2">
+        <div className="flex justify-between items-center h-[70px] sm:h-16 md:h-20">
           {/* Logo */}
           <RouterLink to={'/'}>
             <div className="flex items-center justify-center">
-              <span className="text-2xl font-bold">
-                <img src={Logo} alt="Logo" className="h-12" />
-              </span>
+              <img src={Logo} alt="Logo" className="h-[70px] sm:h-14 md:h-20" />
             </div>
           </RouterLink>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6">
+          {/* Desktop and Medium Menu */}
+          <div className="hidden sm:flex md:flex space-x-8 sm:space-x-12 md:space-x-16 text-sm sm:text-base md:text-xl">
             <button
               onClick={() => handleNavigateAndScroll('home')}
               className="hover:text-[#1b4e8c] font-semibold cursor-pointer"
@@ -97,10 +90,10 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="sm:hidden pt-2 pr-2">
             <button onClick={toggleMenu} className="focus:outline-none">
               <svg
-                className="w-6 h-6"
+                className="w-8 h-8"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -120,7 +113,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu with Framer Motion */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -129,11 +122,11 @@ const Navbar = () => {
             exit={{ opacity: 0, scale: 0.9, y: -20 }}
             transition={{
               duration: 0.3,
-              ease: [0.25, 0.8, 0.5, 1], // Smooth easing curve
+              ease: [0.25, 0.8, 0.5, 1],
             }}
-            className="md:hidden overflow-hidden min-h-screen flex flex-col justify-center bg-[#e9f9f9] shadow-lg"
+            className="sm:hidden overflow-hidden min-h-screen flex flex-col justify-center bg-[#e9f9f9] shadow-lg -mt-16"
           >
-            <div className="px-4 pb-4 flex flex-col justify-evenly items-center text-2xl -mt-24">
+            <div className="px-4 pb-4 flex flex-col items-center text-2xl">
               <button
                 onClick={() => {
                   toggleMenu();
