@@ -12,12 +12,14 @@ import FINLET from '../assets/Pediatric Range/FINLET.png';
 import INSTABONE from '../assets/Ortho Range/INSTABONE.png';
 import CASSOWARY from '../assets/Ortho Range/CASSOWARY.png';
 import PUFFIN_6 from '../assets/Ortho Range/PUFFIN_6.png';
+import DICLOFINE_GEL from '../assets/Ortho Range/DICLOFINE_GEL.png'
 import TRAMLET_P from '../assets/Ortho Range/TRAMLET_P.png';
 import MACOPAN from '../assets/Gastro Range/MACOPAN.png';
 import MACOPAN_DSR from '../assets/Gastro Range/MACOPAN_DSR.png';
 import SILVELET from '../assets/Skin Range/SILVELET.png';
 import FUNGILET_CREAM from '../assets/Skin Range/FUNGILET_CREAM.png';
-import MOBILET_P from '../assets/MOBILET_P.png';
+import MUPIROSE from '../assets/Skin Range/MUPIROSE.png'
+import MOBILET_P from '../assets/Others/MOBILET_P.png';
 
 const productsData = [
   { id: 1, image: DROLET, title: 'DROLET', category: 'Gynecology' },
@@ -31,12 +33,14 @@ const productsData = [
   { id: 9, image: INSTABONE, title: 'INSTABONE', category: 'Ortho' },
   { id: 10, image: CASSOWARY, title: 'CASSOWARY', category: 'Ortho' },
   { id: 11, image: PUFFIN_6, title: 'PUFFIN-6', category: 'Ortho' },
-  { id: 12, image: TRAMLET_P, title: 'TRAMLET-P', category: 'Ortho' },
-  { id: 13, image: MACOPAN, title: 'MACOPAN', category: 'Gastro' },
-  { id: 14, image: MACOPAN_DSR, title: 'MACOPAN-DSR', category: 'Gastro' },
-  { id: 15, image: SILVELET, title: 'SILVELET', category: 'Skin' },
+  { id: 12, image: DICLOFINE_GEL, title: 'DICLOFINE-GEL', category: 'Ortho' },
+  { id: 13, image: TRAMLET_P, title: 'TRAMLET-P', category: 'Ortho' },
+  { id: 14, image: MACOPAN, title: 'MACOPAN', category: 'Gastro' },
+  { id: 15, image: MACOPAN_DSR, title: 'MACOPAN-DSR', category: 'Gastro' },
   { id: 16, image: FUNGILET_CREAM, title: 'FUNGILET-CREAM', category: 'Skin' },
-  { id: 17, image: MOBILET_P, title: 'MOBILET-P', category: 'Others' },
+  { id: 17, image: SILVELET, title: 'SILVELET', category: 'Skin' },
+  { id: 18, image: MUPIROSE, title: 'MUPIROSE', category: 'Skin' },
+  { id: 19, image: MOBILET_P, title: 'MOBILET-P', category: 'Others' },
 ];
 
 const Products = () => {
@@ -83,9 +87,9 @@ const Products = () => {
       >
         {[
           'All',
-          'Gynecology',
-          'GP',
           'Pediatric',
+          'GP',
+          'Gynecology',
           'Ortho',
           'Gastro',
           'Skin',
@@ -94,11 +98,10 @@ const Products = () => {
           <button
             key={category}
             onClick={() => handleCategoryChange(category)}
-            className={`px-4 py-2 rounded-md font-medium ${
-              selectedCategory === category
+            className={`px-4 py-2 rounded-md font-medium ${selectedCategory === category
                 ? 'bg-[#1f4c9e] text-white'
                 : 'bg-gray-200 text-gray-800'
-            }`}
+              }`}
           >
             {category}
           </button>
