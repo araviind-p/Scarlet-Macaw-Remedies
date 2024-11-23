@@ -59,7 +59,7 @@ const Navbar = () => {
               <img
                 src={Logo}
                 alt="Logo"
-                className="h-[50px] sm:h-14 md:h-20 w-auto z-30"
+                className="h-[70px] sm:h-14 md:h-20 w-auto z-30"
               />
             </div>
           </RouterLink>

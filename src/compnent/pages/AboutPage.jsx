@@ -155,14 +155,14 @@ const AboutPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step) => (
               <motion.div
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }} // Subtle hover scale
                 key={step.id}
-                className="flex flex-col items-center text-center shadow-md rounded-lg p-6 cursor-pointer"
+                className=" flex hover:bg-gray-100 flex-col items-center text-center shadow-md rounded-lg p-6 cursor-pointer transition-transform duration-300 ease-out" // Smooth transition
                 initial={{ opacity: 0, y: 30 }}
                 animate={isStepsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{
-                  delay: step.id * 0.2,
-                  duration: 0.5,
+                  delay: 0.1,
+                  duration: 0.1,
                 }}
               >
                 <div className="w-16 h-16 flex items-center justify-center bg-gray-100 text-[#1A4D8F] rounded-lg mb-4">
