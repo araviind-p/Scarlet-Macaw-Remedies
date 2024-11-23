@@ -1,33 +1,36 @@
+import LOGO from '../assets/logo.png';
+
 const Footer = () => {
   return (
-    <footer className=" text-center text-neutral-800 bg-[#e9f9f9] lg:text-left">
-      <div className="flex  items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between"></div>
+    <footer className="text-center text-neutral-800 bg-[#e9f9f9] lg:text-left">
+      {/* <!-- Divider section (optional) --> */}
+      <div className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between"></div>
 
-      {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
-      <div className="mx-6 pt-8 text-center md:text-left max-w-6xl sm:mx-auto">
-        <div className="grid-1 grid gap-8 md:grid-cols-3 lg:grid-cols-3">
-          {/* <!-- TW Elements section --> */}
-          <div className="">
-            <h6 className="mb-4 flex items-center justify-center font-bold uppercase md:justify-start">
-              Scarlet macaw Remedies
-            </h6>
-            <p className="text-justify">
+      {/* <!-- Main Content --> */}
+      <div className="mx-4 pt-8 text-center md:text-left sm:mx-6 lg:mx-16">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {/* <!-- Logo Section --> */}
+          <div className="flex justify-center items-center lg:justify-end pt-0 sm:-mt-10 mr-0 lg:mr-10">
+            <img className="h-16 sm:h-20" src={LOGO} alt="Logo" />
+          </div>
+
+          {/* <!-- Description Section --> */}
+          <div className="text-center md:text-left">
+            <p className="text-justify sm:pt-4">
               Your trusted partner in quality healthcare since 2014. Together,
               we strive for a healthier tomorrow with innovation and care.
             </p>
           </div>
-          {/* <!-- Products section --> */}
 
-          <div className="">
-            <h6 className="mb-2 flex justify-center font-bold uppercase md:justify-start">
-              Inquiries
-            </h6>
+          {/* <!-- Inquiries Section --> */}
+          <div className="sm:pt-4">
+            <h6 className="mb-2 font-bold uppercase">Inquiries</h6>
             <p className="mb-2 flex items-center justify-center md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="mr-1 h-5 w-5"
+                className="mr-2 h-5 w-5"
               >
                 <path
                   fillRule="evenodd"
@@ -35,14 +38,14 @@ const Footer = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              + 91 9061004666
+              +91 9061004666
             </p>
-            <p className="mb-3 flex items-center justify-center md:justify-start">
+            <p className="flex items-center justify-center md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="mr-3 h-5 w-5"
+                className="mr-2 h-5 w-5"
               >
                 <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                 <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
@@ -50,12 +53,11 @@ const Footer = () => {
               scarletmacawremediesclt@outlook.com
             </p>
           </div>
-          {/* <!-- Contact section --> */}
-          <div className="">
-            <h6 className="mb-2 flex justify-center font-bold uppercase md:justify-start">
-              Visit us
-            </h6>
-            <p className=" flex items-center justify-center md:justify-start">
+
+          {/* <!-- Address Section --> */}
+          <div className="sm:pt-4">
+            <h6 className="mb-2 font-bold uppercase">Visit us</h6>
+            <p>
               12/1207F, 1&apos;st Floor Apple Square Building, Airport road,
               Ramanattukara, Kozhikode, 673633, Kerala
             </p>
@@ -63,8 +65,8 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* <!--Copyright section--> */}
-      <div className="text-neutral-800 py-6 text-center bg-[#e9f9f9]">
+      {/* <!-- Copyright Section --> */}
+      <div className="bg-[#e9f9f9] py-4 text-center">
         <span>© {new Date().getFullYear()} Copyright</span>
       </div>
     </footer>
