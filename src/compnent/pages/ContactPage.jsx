@@ -208,7 +208,7 @@ const ContactUs = () => {
       </motion.div>
       <div className="responsive-map max-w-6xl mx-2 sm:mx-auto mt-10 rounded-lg">
         <iframe
-          className="absolute top-0 left-0 w-full h-full"
+          className="absolute top-0 left-0 w-full h-full pb-14"
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15656.599384881474!2d75.871717!3d11.176539!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65072323244f9%3A0x586a120c43dc2a6d!2sBank%20of%20Baroda%20Branch!5e0!3m2!1sen!2sin!4v1732205395475!5m2!1sen!2sin"
           allowFullScreen=""
           loading="lazy"
