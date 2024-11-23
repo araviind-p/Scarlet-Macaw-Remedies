@@ -51,15 +51,15 @@ const Navbar = () => {
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-16 pt-2 relative">
+      <div className="max-w-[1400px] container mx-auto px-4 sm:px-6 lg:px-16 pt-2 relative">
         <div className="grid grid-cols-3 sm:grid-cols-5 items-center h-[70px] sm:h-16 md:h-24 gap-4">
           {/* Logo Section */}
           <RouterLink to={'/'}>
-            <div className="col-span-1 flex items-center justify-start z-30">
+            <div className="col-span-1 flex items-center justify-start z-30 lg:pl-1">
               <img
                 src={Logo}
                 alt="Logo"
-                className="h-[70px] sm:h-14 md:h-24 w-auto z-30 ml-0 md:ml-10"
+                className="h-[70px] sm:h-14 md:h-24 w-auto z-30"
               />
             </div>
           </RouterLink>

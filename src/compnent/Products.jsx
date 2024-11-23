@@ -99,7 +99,7 @@ const Products = () => {
             onClick={() => handleCategoryChange(category)}
             className={`px-4 py-2 rounded-md font-medium ${
               selectedCategory === category
-                ? 'bg-[#4ab9ce] text-white'
+                ? 'bg-[#036ba2] text-white'
                 : 'bg-gray-200 text-gray-800'
             }`}
           >

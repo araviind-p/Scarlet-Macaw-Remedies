@@ -92,7 +92,7 @@ const ContactUs = () => {
               </h3>
             </div>
             <p className="text-gray-700">
-              12/1207F, 1&apos;st Floor Apple Square Building, Airport road
+              12/1207F, 1&apos;st Floor, Apple Square Building, Airport road
               <br />
               Ramanattukara, Kozhikode, 673633, Kerala
             </p>

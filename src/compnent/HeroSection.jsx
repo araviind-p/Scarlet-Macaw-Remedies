@@ -24,7 +24,7 @@ const HeroSection = () => {
   return (
     <div
       id="home"
-      className="min-h-screen -mt-6 sm:mt-6 lg:-mt-0 bg-[#E9F8F9] py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-evenly gap-x-14 gap-y-14 font-poppins"
+      className="max-w-[1400px] mx-auto min-h-screen -mt-6 sm:mt-6 lg:-mt-0 bg-[#E9F8F9] py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-evenly gap-x-14 gap-y-14 font-poppins"
     >
       {/* Left Content */}
       <motion.div
@@ -36,8 +36,8 @@ const HeroSection = () => {
         <p className="text-[#4ab9ce] text-xl pb-3 text-left ml-[2px]">
           Health First
         </p>
-        <h1 className="text-4xl sm:text-6xl font-bold text-left text-[#1A4D8F] leading-tight mb-4">
-          Protecting You and Your Family
+        <h1 className="text-4xl sm:text-6xl font-bold text-left text-[#2c60a4] leading-tight mb-4">
+          <span className="text-[#1A4D8F]">Protecting</span> You and Your Family
         </h1>
         <p className="text-gray-600 mb-6 text-justify">
           Scarlet Macaw Remedies is dedicated to enhancing lives with trusted,
@@ -84,7 +84,7 @@ const HeroSection = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
       >
-        <div className="lg:w-[700px] bg-white rounded-full ">
+        <div className="sm:w-[550px] lg:w-[700px] bg-white rounded-full ">
           <motion.img
             src={DOCTORTEAM} // Replace with your image path
             alt="Doctor Team"

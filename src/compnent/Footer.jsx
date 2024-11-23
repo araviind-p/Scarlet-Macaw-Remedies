@@ -2,7 +2,7 @@ import LOGO from '../assets/logo.png';
 
 const Footer = () => {
   return (
-    <footer className="text-center text-neutral-800 bg-[#e1ebec] lg:text-left border-t-2 border-gray-700">
+    <footer className="text-center text-neutral-800 bg-[#eff4f4] lg:text-left border-t-2 border-gray-700">
       {/* <!-- Divider section (optional) --> */}
 
       {/* <!-- Main Content --> */}
@@ -57,7 +57,7 @@ const Footer = () => {
           <div className="sm:pt-4">
             <h6 className="mb-2 font-bold uppercase">Visit us</h6>
             <p>
-              12/1207F, 1&apos;st Floor Apple Square Building, Airport road,
+              12/1207F, 1&apos;st Floor, Apple Square Building, Airport road,
               Ramanattukara, Kozhikode, 673633, Kerala
             </p>
           </div>
