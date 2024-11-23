@@ -18,7 +18,6 @@ const Navbar = () => {
     if (window.location.pathname !== '/') {
       navigate('/');
     }
-
     setTimeout(() => {
       scroller.scrollTo(sectionId, {
         smooth: true,
@@ -52,17 +51,21 @@ const Navbar = () => {
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-16 pt-2">
-        <div className="flex justify-between items-center h-[70px] sm:h-16 md:h-20">
-          {/* Logo */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-16 pt-2 relative">
+        <div className="grid grid-cols-3 sm:grid-cols-5 items-center h-[70px] sm:h-16 md:h-20 gap-4">
+          {/* Logo Section */}
           <RouterLink to={'/'}>
-            <div className="flex items-center justify-center">
-              <img src={Logo} alt="Logo" className="h-[70px] sm:h-14 md:h-20" />
+            <div className="col-span-1 flex items-center justify-start z-30">
+              <img
+                src={Logo}
+                alt="Logo"
+                className="h-[50px] sm:h-14 md:h-20 w-auto z-30"
+              />
             </div>
           </RouterLink>
 
-          {/* Desktop and Medium Menu */}
-          <div className="hidden sm:flex md:flex space-x-8 sm:space-x-12 md:space-x-16 text-sm sm:text-base md:text-xl">
+          {/* Desktop Navigation Links */}
+          <div className="hidden sm:col-span-3 md:text-lg lg:text-xl sm:flex items-center justify-center space-x-6 md:space-x-10 lg:space-x-16">
             <button
               onClick={() => handleNavigateAndScroll('home')}
               className="hover:text-[#1b4e8c] font-semibold cursor-pointer"
@@ -85,15 +88,34 @@ const Navbar = () => {
               onClick={() => handlePageNavigation('/contact')}
               className="hover:text-[#1b4e8c] font-semibold cursor-pointer"
             >
-              Contact
+              Contact Us
             </button>
           </div>
 
+          {/* Contact Section */}
+          <div className="hidden sm:flex items-center justify-end col-span-1">
+            <div className="text-[#fff] bg-[#1a4d91] py-2 px-4 rounded-lg text-sm md:text-lg font-semibold flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="mr-2 h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <p>+91 9061004666</p>
+            </div>
+          </div>
+
           {/* Mobile Menu Button */}
-          <div className="sm:hidden pt-2 pr-2">
+          <div className="sm:hidden col-span-2 flex justify-end z-30">
             <button onClick={toggleMenu} className="focus:outline-none">
               <svg
-                className="w-8 h-8"
+                className="w-8 h-8 mr-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -117,16 +139,16 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: -20 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{
               duration: 0.3,
               ease: [0.25, 0.8, 0.5, 1],
             }}
-            className="sm:hidden overflow-hidden min-h-screen flex flex-col justify-center bg-[#e9f9f9] shadow-lg -mt-16"
+            className="absolute top-0 left-0 w-full h-screen bg-[#e9f9f9] shadow-lg z-20 flex flex-col items-center justify-center"
           >
-            <div className="px-4 pb-4 flex flex-col items-center text-2xl">
+            <div className="px-4 pb-4 text-2xl flex flex-col items-center">
               <button
                 onClick={() => {
                   toggleMenu();
@@ -161,7 +183,7 @@ const Navbar = () => {
                 }}
                 className="block text-black hover:text-[#1b4e8c] font-semibold p-2 rounded cursor-pointer"
               >
-                Contact
+                Contact Us
               </button>
             </div>
           </motion.div>
