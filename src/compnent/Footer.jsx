@@ -2,9 +2,8 @@ import LOGO from '../assets/logo.png';
 
 const Footer = () => {
   return (
-    <footer className="text-center text-neutral-800 bg-[#e9f9f9] lg:text-left">
+    <footer className="text-center text-neutral-800 bg-[#e1ebec] lg:text-left border-t-2 border-gray-700">
       {/* <!-- Divider section (optional) --> */}
-      <div className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between"></div>
 
       {/* <!-- Main Content --> */}
       <div className="mx-4 pt-8 text-center md:text-left sm:mx-6 lg:mx-16">
@@ -66,7 +65,7 @@ const Footer = () => {
       </div>
 
       {/* <!-- Copyright Section --> */}
-      <div className="bg-[#e9f9f9] py-4 text-center">
+      <div className=" py-4 text-center">
         <span>© {new Date().getFullYear()} Copyright</span>
       </div>
     </footer>

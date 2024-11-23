@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import DOCTORTEAM from '../assets/doctorTeam.png';
+import { scroller } from 'react-scroll';
 
 const HeroSection = () => {
   const [years, setYears] = useState(1);
@@ -23,7 +24,7 @@ const HeroSection = () => {
   return (
     <div
       id="home"
-      className=" min-h-screen -mt-9 sm:mt-6 lg:-mt-10  bg-[#E9F8F9] py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-evenly gap-x-14 gap-y-14 font-poppins"
+      className=" min-h-screen -mt-6 sm:mt-6 lg:-mt-10  bg-[#E9F8F9] py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-evenly gap-x-14 gap-y-14 font-poppins"
     >
       {/* Left Content */}
       <motion.div
@@ -32,7 +33,10 @@ const HeroSection = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        <h1 className="text-4xl sm:text-6xl font-bold text-[#1A4D8F] leading-tight mb-4">
+        <p className="text-[#4ab9ce] text-xl pb-3 text-left ml-[2px]">
+          Health First
+        </p>
+        <h1 className="text-4xl sm:text-6xl font-bold text-left text-[#1A4D8F] leading-tight mb-4">
           Protecting You and Your Family
         </h1>
         <p className="text-gray-600 mb-6 text-justify">
@@ -60,7 +64,16 @@ const HeroSection = () => {
           whileTap={{ scale: 0.95 }}
           className="bg-yellow-500 text-white font-semibold mt-6  py-3 px-3 rounded-lg shadow-lg hover:bg-yellow-600 transition"
         >
-          <Link to={'/contact'}>Contact Us</Link>
+          <Link
+            onClick={() => {
+              scroller.scrollTo('about', {
+                smooth: true,
+                duration: 500,
+              });
+            }}
+          >
+            Read More
+          </Link>
         </motion.button>
       </motion.div>
 

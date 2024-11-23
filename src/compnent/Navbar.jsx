@@ -52,14 +52,14 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-16 pt-2 relative">
-        <div className="grid grid-cols-3 sm:grid-cols-5 items-center h-[70px] sm:h-16 md:h-20 gap-4">
+        <div className="grid grid-cols-3 sm:grid-cols-5 items-center h-[70px] sm:h-16 md:h-24 gap-4">
           {/* Logo Section */}
           <RouterLink to={'/'}>
             <div className="col-span-1 flex items-center justify-start z-30">
               <img
                 src={Logo}
                 alt="Logo"
-                className="h-[70px] sm:h-14 md:h-20 w-auto z-30"
+                className="h-[70px] sm:h-14 md:h-24 w-auto z-30 ml-0 md:ml-10"
               />
             </div>
           </RouterLink>
@@ -76,7 +76,7 @@ const Navbar = () => {
               onClick={() => handleNavigateAndScroll('about')}
               className="hover:text-[#1b4e8c] font-semibold cursor-pointer"
             >
-              About
+              About Us
             </button>
             <button
               onClick={() => handleNavigateAndScroll('products')}
@@ -165,7 +165,7 @@ const Navbar = () => {
                 }}
                 className="block text-black hover:text-[#1b4e8c] font-semibold p-2 rounded cursor-pointer"
               >
-                About
+                About Us
               </button>
               <button
                 onClick={() => {

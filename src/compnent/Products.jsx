@@ -22,6 +22,7 @@ import SILVELET from '../assets/Skin Range/SILVELET.png';
 import FUNGILET_CREAM from '../assets/Skin Range/FUNGILET_CREAM.png';
 import MUPIROSE from '../assets/Skin Range/MUPIROSE.png';
 import MOBILET_P from '../assets/Others/MOBILET_P.png';
+import { Link } from 'react-router-dom';
 
 // Products Data
 const productsData = [
@@ -65,7 +66,7 @@ const Products = () => {
       : productsData.filter((product) => product.category === selectedCategory);
 
   return (
-    <div id="products" className="pt-16 px-6 sm:px-12 lg:px-24">
+    <div id="products" className="pt-16 px-6 sm:px-12 lg:px-24 pb-20">
       {/* Heading */}
       <motion.h1
         className="font-bold text-[#1c4e92] text-3xl sm:text-4xl items-center justify-center flex"
@@ -98,7 +99,7 @@ const Products = () => {
             onClick={() => handleCategoryChange(category)}
             className={`px-4 py-2 rounded-md font-medium ${
               selectedCategory === category
-                ? 'bg-[#1c4e92] text-white'
+                ? 'bg-[#4ab9ce] text-white'
                 : 'bg-gray-200 text-gray-800'
             }`}
           >
@@ -119,12 +120,29 @@ const Products = () => {
         <div className="flex justify-center mt-8">
           <button
             onClick={handleLoadMore}
-            className="px-6 py-3 bg-[#1c4e92] text-white font-medium rounded-md hover:bg-[#163a6b]"
+            className="px-6 py-3 bg-yellow-500 text-white font-medium rounded-md hover:bg-yellow-600"
           >
             Load More
           </button>
         </div>
       )}
+      <section className="bg-[#dff3f4] py-16 px-6 sm:px-12 lg:px-24 rounded-2xl text-center mt-20">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#1c4f91] mb-4">
+          Shaping Health Together
+        </h2>
+        <p className="text-lg text-black mb-8 text-justify sm:text-center">
+          Have a vision for innovative healthcare solutions? Contact Scarlet
+          Macaw Remedies today to explore how our high-quality medicines and
+          expertise can help bring it to life. Together, we can enhance lives
+          and shape a healthier future.
+        </p>
+        <Link
+          to="/contact"
+          className="bg-[#44aaba] text-white font-semibold text-lg py-3 px-6 rounded-lg hover:bg-[#3c8693] transition-colors"
+        >
+          Contact Us
+        </Link>
+      </section>
     </div>
   );
 };
