@@ -24,7 +24,7 @@ const HeroSection = () => {
   return (
     <div
       id="home"
-      className=" min-h-screen -mt-6 sm:mt-6 lg:-mt-10  bg-[#E9F8F9] py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-evenly gap-x-14 gap-y-14 font-poppins"
+      className="min-h-screen -mt-6 sm:mt-6 lg:-mt-0 bg-[#E9F8F9] py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-evenly gap-x-14 gap-y-14 font-poppins"
     >
       {/* Left Content */}
       <motion.div
@@ -62,7 +62,7 @@ const HeroSection = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-yellow-500 text-white font-semibold mt-6  py-3 px-3 rounded-lg shadow-lg hover:bg-yellow-600 transition"
+          className="bg-yellow-500 text-white font-semibold mt-6 py-3 px-3 rounded-lg shadow-lg hover:bg-yellow-600 transition"
         >
           <Link
             onClick={() => {
@@ -84,11 +84,11 @@ const HeroSection = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
       >
-        <div className="lg:w-[700px]">
+        <div className="lg:w-[700px] bg-white rounded-full ">
           <motion.img
             src={DOCTORTEAM} // Replace with your image path
             alt="Doctor Team"
-            className="rounded-lg shadow-md"
+            className="rounded-lg"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           />

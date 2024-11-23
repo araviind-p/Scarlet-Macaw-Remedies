@@ -189,16 +189,17 @@ const ContactUs = () => {
               value={formData.message}
               onChange={handleChange}
             ></textarea>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.1 }}
               type="submit"
-              className="text-white px-6 py-2 rounded hover:transition"
+              className="text-white font-semibold px-6 py-2 rounded hover:transition"
               style={{
-                backgroundColor: '#274756',
+                backgroundColor: '#e9b308',
               }}
               disabled={isSubmitting}
             >
               {isSubmitting ? 'Sending...' : 'Submit'}
-            </button>
+            </motion.button>
           </form>
           {responseMessage && (
             <p className="mt-4 text-center text-gray-700">{responseMessage}</p>

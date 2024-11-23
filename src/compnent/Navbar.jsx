@@ -94,7 +94,7 @@ const Navbar = () => {
 
           {/* Contact Section */}
           <div className="hidden sm:flex items-center justify-end col-span-1">
-            <div className="text-[#fff] bg-[#1a4d91] py-2 px-4 rounded-lg text-sm md:text-lg font-semibold flex items-center">
+            <div className="text-[#fff] bg-yellow-500 py-2 px-4 rounded-lg text-sm md:text-lg font-semibold flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

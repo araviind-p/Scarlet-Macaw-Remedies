@@ -95,7 +95,7 @@ const AboutPage = () => {
   return (
     <section
       id="about"
-      className="bg-gradient-to-r from-blue-50 via-white to-blue-50 py-16 sm:py-32 px-6 sm:px-12 lg:px-24"
+      className="bg-gradient-to-r from-blue-50 via-white to-blue-50 py-16 pt-24 sm:pt-32 sm:py-32 px-6 sm:px-12 lg:px-24"
     >
       {/* Core values Section */}
       <section className="mb-20" ref={stepsRef}>

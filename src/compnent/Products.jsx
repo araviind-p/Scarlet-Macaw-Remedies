@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Card from './Card'; // Assuming Card is your product display component
 
 // Import product images
@@ -22,7 +23,6 @@ import SILVELET from '../assets/Skin Range/SILVELET.png';
 import FUNGILET_CREAM from '../assets/Skin Range/FUNGILET_CREAM.png';
 import MUPIROSE from '../assets/Skin Range/MUPIROSE.png';
 import MOBILET_P from '../assets/Others/MOBILET_P.png';
-import { Link } from 'react-router-dom';
 
 // Products Data
 const productsData = [
@@ -118,30 +118,34 @@ const Products = () => {
       {/* Load More Button */}
       {selectedCategory === 'All' && visibleCount < productsData.length && (
         <div className="flex justify-center mt-8">
-          <button
+          <motion.button
+            whileHover={{ scale: 1.1 }}
             onClick={handleLoadMore}
-            className="px-6 py-3 bg-yellow-500 text-white font-medium rounded-md hover:bg-yellow-600"
+            className="px-6 py-3 bg-yellow-500 text-white font-medium rounded-lg shadow-lg hover:bg-yellow-600 transition"
           >
             Load More
-          </button>
+          </motion.button>
         </div>
       )}
-      <section className="bg-[#dff3f4] py-16 px-6 sm:px-12 lg:px-24 rounded-2xl text-center mt-20">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#1c4f91] mb-4">
+      <section className="bg-[#000839] py-16 px-6 sm:px-12 lg:px-24 rounded-2xl text-center mt-20">
+        {/* Yellow Line */}
+        <div className="w-24 h-1 mx-auto bg-yellow-500 mb-4"></div>
+
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#d2e2fc] mb-4">
           Shaping Health Together
         </h2>
-        <p className="text-lg text-black mb-8 text-justify sm:text-center">
+        <p className="text-lg text-white mb-8 text-justify sm:text-center">
           Have a vision for innovative healthcare solutions? Contact Scarlet
           Macaw Remedies today to explore how our high-quality medicines and
           expertise can help bring it to life. Together, we can enhance lives
           and shape a healthier future.
         </p>
-        <Link
-          to="/contact"
-          className="bg-[#44aaba] text-white font-semibold text-lg py-3 px-6 rounded-lg hover:bg-[#3c8693] transition-colors"
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          className="bg-yellow-500 text-white font-semibold text-lg py-3 px-6 rounded-lg hover:bg-yellow-600 transition-colors"
         >
-          Contact Us
-        </Link>
+          <Link to="/contact">Contact Us</Link>
+        </motion.button>
       </section>
     </div>
   );
