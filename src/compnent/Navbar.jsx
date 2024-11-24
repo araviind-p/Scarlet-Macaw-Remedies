@@ -65,7 +65,7 @@ const Navbar = () => {
           </RouterLink>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden sm:col-span-4 lg:col-span-3 md:text-lg lg:text-xl sm:flex items-center justify-center space-x-6 md:space-x-10 lg:space-x-16">
+          <div className="hidden sm:col-span-4 lg:col-span-3 sm:text-lg lg:text-xl sm:flex items-center justify-center space-x-6 md:space-x-10 lg:space-x-16">
             <button
               onClick={() => handleNavigateAndScroll('home')}
               className="hover:text-[#1b4e8c] font-semibold cursor-pointer"
