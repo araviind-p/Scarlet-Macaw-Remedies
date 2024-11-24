@@ -65,7 +65,7 @@ const Navbar = () => {
           </RouterLink>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden sm:col-span-3 md:text-lg lg:text-xl sm:flex items-center justify-center space-x-6 md:space-x-10 lg:space-x-16">
+          <div className="hidden sm:col-span-4 lg:col-span-3 md:text-lg lg:text-xl sm:flex items-center justify-center space-x-6 md:space-x-10 lg:space-x-16">
             <button
               onClick={() => handleNavigateAndScroll('home')}
               className="hover:text-[#1b4e8c] font-semibold cursor-pointer"
@@ -93,7 +93,7 @@ const Navbar = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="hidden sm:flex items-center justify-end col-span-1">
+          <div className="hidden lg:flex items-center justify-end col-span-1">
             <div className="text-[#fff] bg-yellow-500 py-2 px-4 rounded-lg text-sm md:text-lg font-semibold flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
