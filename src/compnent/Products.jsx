@@ -66,7 +66,10 @@ const Products = () => {
       : productsData.filter((product) => product.category === selectedCategory);
 
   return (
-    <div id="products" className="pt-16 px-6 sm:px-12 lg:px-24 pb-20">
+    <div
+      id="products"
+      className="pt-16 px-6 sm:px-12 lg:px-24 pb-20 max-w-[1400px] mx-auto"
+    >
       {/* Heading */}
       <motion.h1
         className="font-bold text-[#1c4e92] text-3xl sm:text-4xl items-center justify-center flex"
@@ -127,11 +130,11 @@ const Products = () => {
           </motion.button>
         </div>
       )}
-      <section className="bg-[#000839] py-16 px-6 sm:px-12 lg:px-24 rounded-2xl text-center mt-20">
+      <section className="bg-[#000839] py-16 px-6 sm:px-12 lg:px-24 rounded-2xl text-center mt-20 ">
         {/* Yellow Line */}
         <div className="w-24 h-1 mx-auto bg-yellow-500 mb-4"></div>
 
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#d2e2fc] mb-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#caedf9] mb-4">
           Shaping Health Together
         </h2>
         <p className="text-lg text-white mb-8 text-justify sm:text-center">

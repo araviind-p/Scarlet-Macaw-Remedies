@@ -24,7 +24,7 @@ const HeroSection = () => {
   return (
     <div
       id="home"
-      className="max-w-[1400px] mx-auto min-h-screen -mt-6 sm:mt-6 lg:-mt-0 bg-[#E9F8F9] py-16 px-6 lg:px-20 flex flex-col lg:flex-row items-center justify-evenly gap-x-14 gap-y-14 font-poppins"
+      className="max-w-[1400px] mx-auto min-h-screen -mt-6 sm:mt-6 lg:-mt-0 bg-[#E9F8F9] py-16 px-6 lg:px-20 flex flex-col sm:flex-row items-center justify-evenly gap-x-14 gap-y-14 font-poppins"
     >
       {/* Left Content */}
       <motion.div
@@ -79,7 +79,7 @@ const HeroSection = () => {
 
       {/* Right Content */}
       <motion.div
-        className="relative"
+        className="relative "
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
