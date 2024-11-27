@@ -110,7 +110,7 @@ const ContactUs = () => {
                 CALL US
               </h3>
             </div>
-            <p className="text-gray-700">Phone : +91 9061004666</p>
+            <p className="text-gray-700">+91 9061004666 , +91 4954066444</p>
           </div>
 
           <div>

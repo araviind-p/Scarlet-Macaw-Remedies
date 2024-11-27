@@ -37,7 +37,7 @@ const Footer = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              +91 9061004666
+              +91 9061004666 , +91 4954066444
             </p>
             <p className="flex items-center justify-center md:justify-start">
               <svg
