@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { scroller } from 'react-scroll';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import Logo from '/logo.png';
+import Logo from '/navlogo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
